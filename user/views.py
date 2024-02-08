@@ -16,8 +16,8 @@ class CustomLogoutView(LogoutView):
 class EnrollmentCreateView(CreateView):
     model = Student
     fields = '__all__'
-    template_name = 'enrollment_create.html' 
-    success_url = reverse_lazy('student-list')
+    # template_name = 'enrollment_create.html' 
+    success_url = reverse_lazy('enrollment-create')
 
 class EnrollmentUpdateView(UpdateView):
     model = Student
