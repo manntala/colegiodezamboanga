@@ -1,16 +1,18 @@
 {
-    "builds": [{
+    "version": 2,
+    "builds": [
+      {
         "src": "colegiodezamboanga/wsgi.py",
-        "use": "@ardnt/vercel-python-wsgi",
-        "config": {
-            "maxLambdaSize": "15mb",
-            "runtime": "python3.9"
-        }
-    }],
+        "use": "@vercel/python",
+        "config": { "maxLambdaSize": "15mb" }
+      }
+    ],
     "routes": [
-        {
-            "src": "/(.*)",
-            "dest": "colegiodezamboanga/wsgi.py"
-        }
-    ]
-}
+      { "handle": "filesystem" },
+      { "src": "/(.*)", "dest": "colegiodezamboanga/wsgi.py" }
+    ],
+    "env": {
+      "DJANGO_SETTINGS_MODULE": "colegiodezamboanga.settings"
+    }
+  }
+  
