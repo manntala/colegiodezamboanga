@@ -3,4 +3,4 @@ fields.txt
 db.sqlite3
 venv/
 venv
-
+__pycache__
